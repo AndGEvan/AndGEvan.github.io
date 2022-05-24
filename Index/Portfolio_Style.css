@@ -1,0 +1,693 @@
+/*imported fonts*/
+@font-face{
+	src:url('Fonts/Nunito-VariableFont_wght.ttf');
+	src: url('Fonts/Nunito-VariableFont_wght.woff') format('woff'); 
+	font-family:"Nunito"; 	
+}
+
+@font-face {
+	src: url('Fonts/Brasika_Display-www.Dfonts.org/Brasika-Display.ttf');
+	src: url('Fonts/Brasika-Display.woff') format('woff');
+	font-family:"Brasika";
+}
+
+/*styling for body*/
+
+body{
+	display: block;
+	margin:auto;
+	padding:0;
+	width:100%;
+	height:100%;
+	background-image:url('background/image-from-rawpixel-id-2344815-original.jpg');
+	background-attachment: fixed; 
+	background-repeat: no-repeat;
+}
+
+/*styling for navigation*/
+
+.topnav {
+	overflow: hidden; 
+	border-bottom: 3px solid #ff0054; 
+}
+
+.topnav a {
+	float: left;
+	display: block;
+	font-family:'Brasika', regular;
+	text-align: center;
+	padding: 15px;
+	color: #ff0054;
+	font-size: 0.95em;
+	text-decoration: none;
+	
+}
+
+.topnav a:hover { 
+	transform: scale(1.5);
+}
+
+/* hide links that should open and close the topnav on small screens */
+.topnav .icon {
+	display: none;
+	font-family: 'Nunito', sans-serif;
+	color: #ff0054
+}
+
+#myBtn {
+	display: none; 
+	position: fixed;
+	bottom: 20px; 
+	right: 30px; 
+	z-index: 99; 
+	border: none; 
+	outline: none; 
+	cursor: pointer; 
+	padding: 15px; 
+	font-size: 1.3000em; 
+	text-align: center;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background-color: #ffffff;
+	font-family:'Brasika', regular;
+	font-weight: bold;
+	color:#ff0054;
+
+}
+  
+
+#myBtn:active {
+	transform: translateY(4px);
+}
+
+  
+/*end of styling for navigation*/
+
+/* reveal on scroll animation for sections*/
+
+.reveal{
+	position: relative;
+	transform: translateY(100px);
+	opacity: 0;
+	transition: 1s all ease;
+}
+  
+  .reveal.active{
+	transform: translateY(0);
+	opacity: 1;
+}
+
+/*styling for heading*/
+
+h1{
+	font-family:'Brasika', regular;
+	color:#ff0054;
+	text-align: center;
+}
+
+h2{
+	font-family:'Brasika', regular;
+	font-size: 2em;
+	color:#ff0054;
+	text-align: center;
+}
+
+/* end of styling for headings */
+
+/*styling for home section*/
+
+.home-columns{
+	display:flex; 
+	flex-flow: row wrap; 
+	justify-content: center; 
+	margin: 10px 15px;
+	padding: 10px 15px;
+	height: 100%;
+	box-sizing: border-box;
+}
+
+.h1-column{
+	flex:1; 
+	margin:auto; 
+	padding: 0;
+}
+
+.h2-column{
+	flex:1; 
+	margin: auto; 
+	padding: 0;
+}
+
+.h1-column h3{
+	font-family:'Brasika', regular;
+	color:#ff0054;
+	text-align:center;
+}
+
+.a-section{
+	max-width:100%;
+	height: auto;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	font-family: 'Nunito', sans-serif;
+	color: #ff0054; 
+	text-align: justify; 
+}
+
+
+.portrait{
+	max-width:100%;
+	height: auto;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+/*end of styling for home section*/
+
+/* styling for resume-section*/
+
+.resume-columns{
+	display:flex; 
+	flex-flow: row wrap; 
+	justify-content: center; 
+	margin: auto;
+	padding: 0;
+	height: 100%; 
+}
+
+.r1-column{
+	flex:1; 
+	margin:auto; 
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.r2-column{
+	flex:1; 
+	margin: auto; 
+	padding: 0;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.r-img{
+	max-width:100%;
+	height: auto;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+table{
+	max-width:100%;
+	height: auto;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	color: #ff0054;  
+}
+
+.r-num{
+	padding: 10px; 
+	font-family: 'Brasika', regular;
+	font-size: 1.30em;
+	border-right: 5px solid #ffffff;
+	border-bottom: 5px solid #ffffff;
+	border-radius: 30px;
+}
+
+.r-item{
+	padding: 10px; 
+	font-family: 'Brasika', regular;
+	border-bottom: 3px solid #ffffff;
+}
+
+button, a{
+	all: unset;
+	cursor: pointer;
+}
+
+
+/* The Modal (background) */
+.modal_multi {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgba(255, 0, 84, 0.1);
+}
+
+/* Modal Content */
+.modal-content {
+	position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+	background-color: #ffffff;
+	box-sizing: border-box;
+	box-shadow: 0 20px 20px rgba(255, 0, 84, 0.5);
+	border-radius: 30px;
+	text-align: justify; 
+	word-wrap: break-word;
+}
+
+.modal-header {
+    padding: 5px;
+    background-color: #ff0054;
+    color: white;
+	border-top-right-radius: 30px;
+	border-top-left-radius: 30px;
+	font-family: 'Brasika', regular ;
+	text-align: center; 
+}
+
+.modal-body {
+	padding: 2px 16px;
+	font-family:'Nunito', sans-serif ;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    color: white;
+	border-bottom-right-radius: 30px;
+	border-bottom-left-radius: 30px;
+}
+
+.ribbon{
+	width: 70px;
+	height: 65px;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+/* The Close Button */
+.close {
+	color: #ffffff;
+	float: right;
+	font-family: 'Nunito', sans-serif;
+	font-size: 28px;
+	font-weight: bold;
+	padding: 10px 10px 0px 0px; 
+}
+
+.close:hover,
+.close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/*end of styling for resume section*/
+
+/*styling of portfolio section*/
+
+.portfolio-columns-1, .portfolio-columns-2, .portfolio-columns-3, .portfolio-columns-4{
+	display:flex; 
+	flex-flow: row wrap; 
+	justify-content: center; 
+	margin: auto;
+	padding: 0;
+	height: 100%;
+}
+
+.p1-column{
+	flex:1; 
+	margin: auto; 
+	text-align: center;
+	padding: 15px;
+	
+}
+
+.p2-column{
+	flex:1; 
+	margin:auto; 
+	padding: 35px;
+}
+
+.p1-column h3{
+	font-family:'Brasika', regular;
+	color:#ff0054;
+	text-align:center;
+}
+
+.d-section{
+	width:100%;
+	height: auto;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	color: #ff0054; 
+	font-family: 'Nunito', sans-serif;
+	text-align: center;
+}
+
+.d-section a{
+	font-family:'Brasika', regular;
+	text-decoration-line: underline;
+}
+
+.newspaper{
+	max-width: 100%;
+	height: auto;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	box-sizing: border-box;
+	border-radius: 30px;
+}
+
+.p3-column{
+	flex:1; 
+	margin:auto; 
+	padding: 35px;
+}
+
+.p4-column{
+	flex:1; 
+	margin: auto; 
+	padding: 15px;
+	text-align: center;
+}
+
+video{
+	width: 100%; 
+	height: auto;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%); 
+	box-sizing: border-box; 
+	border-radius: 30px;
+}
+
+.p4-column h3{
+	font-family:'Brasika', regular;
+	color:#ff0054;
+	text-align:center;
+}
+
+.p4-column .d-section{
+	width:100%;
+	height: auto;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	color: #ff0054; 
+	font-family: 'Nunito', sans-serif;
+	text-align: center;
+}
+
+.p5-column{
+	flex:1; 
+	margin: auto; 
+	padding: 15px;
+	text-align: center;
+}
+
+.p6-column{
+	flex:1; 
+	margin:auto; 
+	padding: 35px;
+}
+
+.axie{
+	max-width: 100%;
+	height: auto;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	box-sizing: border-box;
+	border-radius: 30px;
+}
+
+.p5-column h3{
+	font-family:'Brasika', regular;
+	color:#ff0054;
+	text-align:center;
+}
+
+.p5-column .d-section{
+	width:100%;
+	height: auto;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	color: #ff0054; 
+	font-family: 'Nunito', sans-serif;
+	text-align: center;
+}
+
+.p7-column{
+	flex:1; 
+	margin:auto; 
+	padding: 35px;
+}
+
+.p8-column{
+	flex:1; 
+	margin: auto; 
+	padding: 15px;
+	text-align: center;
+}
+
+.necklace{
+	max-width: 100%;
+	height: auto;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	box-sizing: border-box;
+	border-radius: 30px;
+}
+
+.p8-column h3{
+	font-family:'Brasika', regular;
+	color:#ff0054;
+	text-align:center;
+}
+
+.p8-column .d-section{
+	width:100%;
+	height: auto;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	color: #ff0054; 
+	font-family: 'Nunito', sans-serif;
+	text-align: center;
+}
+
+/*end of styling for portfolio section*/
+	
+/* styling of contact section*/
+
+.contact-columns{
+	display:flex; 
+	flex-flow: row wrap; 
+	justify-content: center; 
+	margin: 10px 15px;
+	padding: 10px 15px; 
+}
+
+.c1-column{
+	flex:1; 
+	margin:auto; 
+	padding: 0; 
+}
+
+.c2-column{
+	flex:1; 
+	margin: auto; 
+	padding: 0;
+}
+
+form{
+	text-align: left;
+	padding: 0px;
+}
+
+form h3{
+	font-family:'Brasika', regular;
+	color:#ff0054;
+	text-align: center; 
+}
+
+form p{
+	margin: 5px;
+	font-family:'Nunito', sans-serif;
+	font-weight: bold;
+	color:#ff0054;
+	text-align: left; 
+}
+
+input[type=text],input[type=email] {
+	width: 100%;
+	height: 30px;
+	padding: 5px; 
+	background: transparent; 
+	border: none;
+	border-bottom: 3px solid #ff0054;
+	font-family:'Nunito',sans-serif;
+	font-size: 1em;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+input[type=text]:focus{
+	outline: none; 
+	background: transparent; 
+}
+
+input[type=email]:focus{
+	outline: none; 
+	background: transparent; 
+}
+
+textarea:focus{
+	outline: none; 
+	background: transparent; 
+}
+
+textarea{
+	width: 100%;
+	height: 150px;
+	background: transparent; 
+	border: none;
+	border-bottom: 3px solid #ff0054;  
+	resize: none;
+	font-size: 1em;
+	font-family:'Nunito',sans-serif;
+}
+
+input[type=submit],input[type=reset] {
+	display: inline-block;
+	margin: 5px 5px;
+	padding: 5px 5px;
+	width: 100px;
+	border: 1px solid #ff0054;
+	outline: none;
+	background-color: rgba(0, 0, 0, 0);
+	border-radius: 60px;
+	font-family:'Brasika', regular;
+	font-size: 1em;
+	color:#ff0054; 
+	text-align: center; 
+}
+
+input[type=submit]:active {
+  transform: translateY(5px);
+}
+
+input[type=reset]:active {
+  transform: translateY(5px);
+}
+
+form .socials{
+	margin: 5px 5px;
+	padding: 5px 5px;
+}
+
+form .socials a{
+	border: 1px solid #ff0054; 
+	border-radius: 50%;
+	line-height: 36px; 
+	text-align: center;
+	font-weight: 600; 
+	width: 38px;
+	margin-right: 10px; 
+	color:#ff0054; 
+}
+
+.socials p{
+	font-weight: bold;
+	font-size: 1.5em; 
+}
+ 
+.e-mail{
+	max-width:100%;
+	height: auto;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.footer-container{
+	height: auto; 
+    width: 100%;
+    border: none;
+	border-top: 3px solid #ff0054;
+}
+
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-content p{
+	font-family: 'Nunito', sans-serif; 
+	font-weight: bold;
+	color:#ff0054;
+	text-align:center
+}
+
+/* media queries for responsive design*/
+
+@media screen and (max-width: 720px) {
+
+	.topnav a:not(:first-child) {display: none;}
+  	.topnav a.icon {
+    float: right;
+    display: block;
+  	}
+
+	.topnav.responsive {position: relative;}
+  	.topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  	}
+
+  	.topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  	}
+
+	.topnav a:hover { 
+	transform: scale(1.0);
+	}
+
+	.home-columns,.resume-columns, .portfolio-columns-1, .portfolio-columns-2,
+	.portfolio-columns-3,.portfolio-columns-4, .contact-columns{
+	flex-direction: column;
+  	}
+
+	.portfolio-columns-2,.portfolio-columns-4{
+	flex-direction: column-reverse;	
+	}  
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+	.h1-column{
+		margin: 0px 15px;
+	}
+
+}
+
+
